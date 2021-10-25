@@ -61,4 +61,7 @@ const usr = require('./routes/usr')
     
 //porta
 const PORT = 8081
-app.listen(PORT, ()=>{console.log('Server running!')});
+app.listen(PORT, ()=>{
+    console.log('Server running!')
+    console.log('http://localhost:8081/')
+});
