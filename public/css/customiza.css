@@ -1,0 +1,33 @@
+.btn-primary {
+    background-color: #eaab51;
+    font-size: 1.2em;
+    border-color: #eaab51;
+  }
+.btn-primary:hover{
+    background-color: #e29c39;
+    font-size: 1.2em;
+    border-color: #e29c39;
+}
+/*botao de remover*/
+.btn-warning {
+    background-color: #ec9464;
+    font-size: 1.2em;
+    border-color: #ec9464;
+}
+.btn-warning:hover {
+    background-color: #e77f47;
+    font-size: 1.2em;
+    border-color: #e77f47;
+}
+/*botao de editar*/
+.btn-info {
+    background-color: #8dd179;
+    font-size: 1.2em;
+    border-color: #8dd179;
+}
+.btn-info:hover {
+    background-color: #81db66;
+    font-size: 1.2em;
+    border-color: #81db66;
+}
+

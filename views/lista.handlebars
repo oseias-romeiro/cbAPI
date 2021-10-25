@@ -1,0 +1,38 @@
+
+<div class="lista">
+    <h2>lista de usuarios</h2>
+    <hr>
+    <a href="/usuario/cadastra">
+        <button class="btn btn-primary">cadastre um usuario</button>
+    </a>
+    {{#each usuarios}}
+        <div class="card mt-4">
+            <div class="card-body">
+                <h4>Nome: {{nome}}</h4>
+                <h6>Email: {{email}}</h6>
+                {{#if isSuper}}
+                    <h6>tipo: super usuario</h6><br>
+                {{else}}
+                    <h6>tipo: usuario comum</h6><br>
+                    <a href="/usuario/remove/{{_id}}">
+                        <button class="btn btn-warning">Remover</button>
+                    </a>
+                    <a href="/usuario/edita/{{_id}}">
+                        <button class="btn btn-info">Editar</button>
+                    </a>
+                {{/if}}
+            </div>
+        </div>
+    {{else}}
+        <h4>nenhuma usuario cadastrado</h4>
+    {{/each}}
+</div>
+
+<style>
+    .lista {
+        margin-top: 5%;
+    }
+    .btn-info {
+        margin-left: 10px;
+    }
+</style>

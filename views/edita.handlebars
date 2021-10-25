@@ -1,0 +1,58 @@
+{{#each erros}}
+    <div class="alert alert-danger">
+        <p>{{texto}}</p>
+    </div>
+{{else}}
+{{/each}}
+
+<div class="card mt-4">
+    <div class="card-body">
+        <h3>Edita conta</h3>
+    </div>
+    <div class="card-body">
+        <form action="/usuario/upload" method="post">
+            <input type="hidden" name="id" value="{{usuario._id}}">
+            <div class="form-floating mb-3">
+                <input type="text" name="nome" class="form-control" required value="{{usuario.nome}}">
+                <label class="form-label" for="nome">Nome: </label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" name="email" class="form-control" required value="{{usuario.email}}">
+                <label class="form-label" for="email">Email: </label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" name="senha" class="form-control" required>
+                <label class="form-label" for="senha">Senha: </label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" name="senha2" class="form-control" required>
+                <label class="form-label" for="senha2">Senha novamente: </label>
+            </div>
+            
+            <h5>Usuario:</h5>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="comumSuper" id="comum" value="comum"
+                {{#if usuario.isSuper}}
+                {{else}}
+                    checked
+                {{/if}}>
+                <label class="form-check-label" for="comum">
+                    Comum
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="comumSuper" id="super" value="super"
+                {{#if usuario.isSuper}}
+                    checked
+                {{else}}
+                {{/if}}>
+                <label class="form-check-label" for="super">
+                    Super
+                </label>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary" >Editar</button>
+            <br>
+        </form>
+    </div>
+</div>

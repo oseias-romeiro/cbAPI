@@ -1,0 +1,31 @@
+
+<div class="card mt-4">
+    <div class="card-body">
+        <h2>Login</h2>
+    </div>
+    <div class="card-body">
+        <form action="/login/valida" method="post">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" name="email" required>
+                <label class="form-label" for="email">Email:</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" name="senha" required>
+                <label class="form-label" for="senha">Senha:</label>
+            </div>
+            <button class="btn btn-primary btn-lg" type="submit">Login</button>
+        </form>
+    </div>
+    <div class="card-body">
+        <a href="/login/google">
+            <img src="/img/googleIcon.png" alt="google" id="iconGoogle">
+            <button  class="btn btn-outline-secondary">Login com o Google</button>
+        </a>
+    </div>
+</div>
+
+<style>
+    #iconGoogle {
+        max-width: 30px;
+    }
+</style>

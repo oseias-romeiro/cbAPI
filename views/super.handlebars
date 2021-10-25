@@ -1,0 +1,31 @@
+<div class="container mt-4">
+    <h2>Bem vindo {{name}}</h2>
+
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <h4>Dados</h4>
+            <br>
+            <h6>Nome: {{name}}</h6>
+            <h6>Email: {{email}}</h6>
+        </div>
+    </div><br>
+
+    {{#if sup}}
+        <div class="bd-example">
+            <a href="/usuario/cadastra" class="link-light">
+                <button type="button" class="btn btn-primary">cadastra usuario</button>
+            </a>
+            <a href="/usuario/lista" class="link-light">
+                <button type="button" class="btn btn-primary">lista usuarios</button>
+            </a>
+        </div>
+    {{else}}
+    {{/if}}
+</div>
+
+<style>
+    .container {
+        margin-top: 5%;
+    }
+</style>
