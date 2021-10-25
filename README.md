@@ -1,6 +1,6 @@
 # Aplicação REST API
 
-Ete código é um CRUD desenvlvido em Node.js, Express e MongoDb
+Este código é um CRUD desenvlvido em Node.js, Express e MongoDb
 
 ## Recursos utilizados
 
@@ -17,16 +17,17 @@ Ete código é um CRUD desenvlvido em Node.js, Express e MongoDb
 
   ROTA                    |     HTTP(Verbo)   |      Descrição        | 
 ------------------------- | ----------------- | --------------------- | 
+/                         |       GET         | Home                  | 
 /login                    |       GET         | Login de usuario      | 
 /login/google             |       GET         | Login com google      | 
 /login/valida             |       POST        | Autentica com google  | 
 /usuario/validaCadastro   |       POST        | Autentica usuario     | 
 /usuario                  |       GET         | Tela de controle      | 
 /usuario/cadastra         |       GET         | Cadastra um usuario   | 
-/usuario/lista            |       GET         | lista de ususarios    | 
-/usuario/edita/:id        |       GET         | editção ususarios     | 
-/usuario/upload           |       POST        | atualiza cadastro     | 
-/usuario/remove/:id       |       GET         | remoção de ususarios  | 
+/usuario/lista            |       GET         | Lista de ususarios    | 
+/usuario/edita/:id        |       GET         | Edição ususarios      | 
+/usuario/upload           |       POST        | Atualiza cadastro     | 
+/usuario/remove/:id       |       GET         | Remoção de ususarios  | 
 /usuario/logout           |       GET         | Logout de usuario     | 
 
 ## Pre-Requisitos
@@ -43,7 +44,7 @@ Pelo cmd/terminal entre na pasta do prejeto e digite a seguite instrução:
 npm install
 ```
 
-## executando a aplicação
+## Executando a aplicação
 
 Pelo CMD/terminal no mesmo caminho, inicie o server
 
@@ -56,7 +57,8 @@ Agora, basta abrir a pagina: `http://localhost:8081/`
 **Conta do super usuario:**
 * Email: Super@gmail.com
 * Senha: SuperUsuario
-obs.: Este email é apenas para testes, logo não podera fazer login com a conta do google usando essas credenciais
+
+Obs.: Este email é apenas para testes, logo não podera fazer login com a conta do google usando essas credenciais
 
 ## Outras configurações
 
@@ -64,7 +66,7 @@ obs.: Este email é apenas para testes, logo não podera fazer login com a conta
 
 * Basta modificar a linha 63 do arquivo principal (App.js)
 
-### Caso queira usar o banco de dados localmente
+### Caso queira usar o banco de dados localmente:
 
 É importante salientar que a API precisa de um super usuario cadastrado no banco de dados previamente
 
