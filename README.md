@@ -1,6 +1,6 @@
 # Aplicação REST API
 
-Este código é um CRUD desenvlvido em Node.js, Express e MongoDb
+Este código é um CRUD desenvlvido em Node.js, Express e MongoDb. Desenvolvido para ser inicializado facilmente
 
 ## Recursos utilizados
 
@@ -59,6 +59,8 @@ Agora, basta abrir a pagina: `http://localhost:8081/`
 * Senha: SuperUsuario
 
 Obs.: Este email é apenas para testes, logo não podera fazer login com a conta do google usando essas credenciais. Para isso, faça o login como super usuario e cadastre um outro usuario com email valido.
+
+Obs.: Só poderá fazer o login com a conta do google se essa conta realmente existir e se ela ja foi cadastrada por um super usuario
 
 ## Outras configurações
 
