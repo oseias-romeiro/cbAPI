@@ -46,7 +46,8 @@ const usr = require('./routes/usr')
         mongoose.Promise = global.Promise;
         //mongodb://localhost/projeto
         mongoose.connect(
-            'mongodb+srv://CocoBambu:APIcb1357@cluster0.8c2la.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+            'mongodb+srv://CocoBambu:APIcb1357@cluster0.8c2la.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+            {useNewUrlParser: true, useUnifiedTopology: true}
         )
             .then( () => {console.log('mongo conectado')})
             .catch( (err)=>{console.log('erro: '+ err)})
