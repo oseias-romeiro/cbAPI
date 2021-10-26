@@ -10,6 +10,7 @@ const flash = require('connect-flash');
 const passport = require('passport')
 require('./config/auth')(passport)
 require('./config/googleAuth')(passport)
+const {db} = require('./config/db')
 
 const login = require("./routes/login")
 const usr = require('./routes/usr')
@@ -44,11 +45,9 @@ const usr = require('./routes/usr')
         app.use(express.static(path.join(__dirname, "public")));
     //mongoose
         mongoose.Promise = global.Promise;
-        //mongodb://localhost/projeto
-        mongoose.connect(
-            'mongodb+srv://CocoBambu:APIcb1357@cluster0.8c2la.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
-            {useNewUrlParser: true, useUnifiedTopology: true}
-        )
+        mongoose.connect(db, {
+            useNewUrlParser: true, useUnifiedTopology: true
+        })
             .then( () => {console.log('mongo conectado')})
             .catch( (err)=>{console.log('erro: '+ err)})
         ;

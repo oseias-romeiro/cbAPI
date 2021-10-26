@@ -76,7 +76,7 @@ Obs.: Se mudar a porta, a autenticação com contas do google não funcionará p
 
 * Instale o MongoDb
 * Crie um banco de dados
-* Modifique a linha 49 do arquivo principal (App.js) colocando o link do banco de dados. Ex.: `mongodb://localhost/nome_do_banco`
+* Modifique a linha 2 do arquivo db.js dentro da pasta ./config, colocando o link do banco de dados. Ex.: `mongodb://localhost/nome_do_banco`
 
 #### cadastrando o super usuario inicial
 
