@@ -34,7 +34,7 @@ Este código é um CRUD desenvlvido em Node.js, Express e MongoDb
 
 * **Node.Js**
 
-p.s.: A base de dados do MongoDb, está sendo usada em nuvem
+p.s.: A base de dados do MongoDb está sendo usada em nuvem
 
 ## Instalando dependências
 
@@ -66,11 +66,13 @@ Obs.: Este email é apenas para testes, logo não podera fazer login com a conta
 
 * Basta modificar a linha 63 do arquivo principal (App.js)
 
+Obs.: Se mudar a porta, a autenticação com contas do google não funcionará pois as urls mudaram.
+
 ### Caso queira usar o banco de dados localmente:
 
 É importante salientar que a API precisa de um super usuario cadastrado no banco de dados previamente
 
-* Precisa ter instaldo o MongoDb
+* Instale o MongoDb
 * Crie um banco de dados
 * Modifique a linha 49 do arquivo principal (App.js) colocando o link do banco de dados. Ex.: `mongodb://localhost/nome_do_banco`
 
