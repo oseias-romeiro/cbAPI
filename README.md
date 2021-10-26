@@ -58,7 +58,7 @@ Agora, basta abrir a pagina: `http://localhost:8081/`
 * Email: Super@gmail.com
 * Senha: SuperUsuario
 
-Obs.: Este email é apenas para testes, logo não podera fazer login com a conta do google usando essas credenciais
+Obs.: Este email é apenas para testes, logo não podera fazer login com a conta do google usando essas credenciais. Para isso, faça o login como super usuario e cadastre um outro usuario com email valido.
 
 ## Outras configurações
 
