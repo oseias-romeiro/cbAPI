@@ -1,6 +1,6 @@
 # Aplicação REST API
 
-Este código é um CRUD desenvlvido em Node.js, Express e MongoDb. Desenvolvido para ser inicializado facilmente
+Este código é um CRUD desenvlvido em Node.js, Express e MongoDb
 
 ## Recursos utilizados
 
@@ -33,8 +33,7 @@ Este código é um CRUD desenvlvido em Node.js, Express e MongoDb. Desenvolvido 
 ## Pre-Requisitos
 
 * **Node.Js**
-
-p.s.: A base de dados do MongoDb está sendo usada em nuvem
+* **MongoDB**
 
 ## Instalando dependências
 
@@ -46,13 +45,13 @@ npm install
 
 ## Executando a aplicação
 
-Pelo CMD/terminal no mesmo caminho, inicie o server
+Pelo CMD/terminal no mesmo caminho, inicie o server:
 
 ```
 npm start
 ```
 
-Agora, basta abrir a pagina: `http://localhost:8081/`
+Agora, basta abrir a pagina: `http://localhost`
 
 **Conta do super usuario:**
 * Email: Super@gmail.com
@@ -70,11 +69,11 @@ Obs.: Só poderá fazer o login com a conta do google se essa conta realmente ex
 
 Obs.: Se mudar a porta, a autenticação com contas do google não funcionará pois as urls mudaram.
 
-### Caso queira usar o banco de dados localmente:
+### Configurando o banco de dados:
 
 É importante salientar que a API precisa de um super usuario cadastrado no banco de dados previamente
 
-* Instale o MongoDb
+* Instale o MongoDB
 * Crie um banco de dados
 * Modifique a linha 2 do arquivo db.js dentro da pasta ./config, colocando o link do banco de dados. Ex.: `mongodb://localhost/nome_do_banco`
 
@@ -94,4 +93,4 @@ router.get('/cadastra', (req,res)=>{
 router.get('/cadastra', isSuper, (req,res)=>{
 ```
 
-End.
+End ;)
