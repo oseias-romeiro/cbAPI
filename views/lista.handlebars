@@ -1,32 +1,32 @@
 
 <div class="lista">
-    <h2>lista de usuarios</h2>
+    <h2>Users list</h2>
     <hr>
     <a href="/usuario/cadastra">
-        <button class="btn btn-primary">cadastre um usuario</button>
+        <button class="btn btn-primary">Sign up a user</button>
     </a>
     {{#each usuarios}}
         <div class="card mt-4">
             <div class="card-body">
-                <h4>Nome: {{nome}}</h4>
+                <h4>{{nome}}</h4>
                 <h6>Email: {{email}}</h6>
                 {{#if isSuper}}
-                    <h6>tipo: super usuario</h6><br>
+                    <h6>Type: Super user</h6><br>
                 {{else}}
-                    <h6>tipo: usuario comum</h6><br>
+                    <h6>Type: Common user</h6><br>
                     <a href="/usuario/remove/{{_id}}">
-                        <button class="btn btn-warning">Remover</button>
+                        <button class="btn btn-warning">Delete</button>
                     </a>
                     <a href="/usuario/edita/{{_id}}">
-                        <button class="btn btn-info">Editar</button>
+                        <button class="btn btn-info">Edit</button>
                     </a>
                 {{/if}}
             </div>
         </div>
     {{else}}
-        <h4>nenhuma usuario cadastrado</h4>
+        <h4>no registered users</h4>
     {{/each}}
-</div>
+</div><br><br>
 
 <style>
     .lista {

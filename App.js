@@ -48,8 +48,8 @@ const usr = require('./routes/usr')
         mongoose.connect(db, {
             useNewUrlParser: true, useUnifiedTopology: true
         })
-            .then( () => {console.log('mongo conectado')})
-            .catch( (err)=>{console.log('erro: '+ err)})
+            .then( () => {console.log('mongo connected')})
+            .catch( (err)=>{console.log('error: '+ err)})
         ;
 
 //rotas

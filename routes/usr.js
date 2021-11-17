@@ -26,7 +26,7 @@ router.get('/lista', isSuper, (req,res)=>{
             res.render('lista', {usuarios: usuarios})
         })
         .catch((err)=>{
-            req.flash('MSGerror', 'erro ao listar usuarios')
+            req.flash('MSGerror', 'error at list')
             res.redirect('/usuario')
             console.log(err)
         })
@@ -40,20 +40,20 @@ router.post('/validaCadastro', (req, res)=>{
         req.body.nome.length < 3 || 
         !isNaN(parseFloat(req.body.nome))
     ){
-        erros.push({texto: "nome inválido"});
+        erros.push({texto: "Invalid name"});
     }
     if( !req.body.email || 
         typeof(req.body.email) == undefined || 
         req.body.email.length < 10
     ){
-        erros.push({texto: "email inválido"});
+        erros.push({texto: "Invalid email"});
     }
     if( !req.body.senha || 
         typeof(req.body.senha) == undefined || 
         req.body.senha.length < 8 || 
         req.body.senha != req.body.senha2
     ){
-        erros.push({texto: "senha inválida"});
+        erros.push({texto: "Invalid password"});
     }
 
     if(erros.length > 0){
@@ -62,7 +62,7 @@ router.post('/validaCadastro', (req, res)=>{
         Usuario.findOne({email: req.body.email})
             .then((usuario)=>{
                 if(usuario){
-                    req.flash('MSGerror', 'Já existe uma conta com este email');
+                    req.flash('MSGerror', 'Account already created');
                     res.redirect("/usuario/cadastra");
                     
                 }else{
@@ -81,19 +81,19 @@ router.post('/validaCadastro', (req, res)=>{
                     crypt.genSalt(10, (erro, salt)=>{
                         crypt.hash(newUsr.senha, salt, (erro, hash)=>{
                             if(erro){
-                                req.flash('MSGerror', 'houve um erro ao salvar o usuario');
+                                req.flash('MSGerror', 'error');
                                 res.redirect("/usuario");
                             }
                             newUsr.senha = hash;
                             
                             newUsr.save()
                                 .then(()=>{
-                                    req.flash('MSGsuccess', 'usuario criado com sucesso');
+                                    req.flash('MSGsuccess', 'User created ;)');
                                     res.redirect("/usuario");
                                     
                                 })
                                 .catch((erro)=>{
-                                    req.flash('MSGerror', 'houve um erro ao criar o usuario');
+                                    req.flash('MSGerror', 'error');
                                     res.redirect("/usuarios");
                                 })
                             ;
@@ -103,7 +103,7 @@ router.post('/validaCadastro', (req, res)=>{
                 }
                 
             }).catch(()=>{
-                req.flash('MSGerror', 'Houve um erro interno');
+                req.flash('MSGerror', 'error');
                 res.redirect("/");
             })
         ;
@@ -115,7 +115,7 @@ router.get('/edita/:id', isSuper, (req, res)=>{
             res.render('edita', {usuario: usuario})
         })
         .catch((err)=>{
-            req.flash('MSGerror', 'Este usuario não existe');
+            req.flash('MSGerror', 'User do not exists');
             res.redirect("/usuario");
             console.log(err);
         })
@@ -128,20 +128,20 @@ router.post('/upload', (req, res)=>{
         req.body.nome.length < 3 || 
         !isNaN(parseFloat(req.body.nome))
     ){
-        erros.push({texto: "nome inválido"});
+        erros.push({texto: "Invalid name"});
     }
     if( !req.body.email || 
         typeof(req.body.email) == undefined || 
         req.body.email.length < 10
     ){
-        erros.push({texto: "email inválido"});
+        erros.push({texto: "Invalid email"});
     }
     if( !req.body.senha || 
         typeof(req.body.senha) == undefined || 
         req.body.senha.length < 8 || 
         req.body.senha != req.body.senha2
     ){
-        erros.push({texto: "senha inválida"});
+        erros.push({texto: "Invalid password"});
     }
 
     if(erros.length > 0){
@@ -155,18 +155,18 @@ router.post('/upload', (req, res)=>{
 
                 usuario.save()
                     .then(()=>{
-                        req.flash('MSGsuccess', 'Usuario editado com sucesso')
+                        req.flash('MSGsuccess', 'Success edit')
                         res.redirect("/usuario")
                     })
                     .catch((err)=>{
-                        req.flash('MSGerror', 'Erro interno')
+                        req.flash('MSGerror', 'Error')
                         res.redirect("/usuario")
                         console.log(err)
                     })
                 ;
             })
             .catch((err)=>{
-                req.flash('MSGerror', 'Usuario não encontrado');
+                req.flash('MSGerror', 'Not found');
                 res.redirect("/usuario");
                 console.log(err)
             })
@@ -176,18 +176,18 @@ router.post('/upload', (req, res)=>{
 router.get("/remove/:id", isSuper, (req, res)=>{
     Usuario.remove({_id: req.params.id})
         .then(()=>{
-            req.flash('MSGsuccess', 'Usuario deletado com sucesso')
+            req.flash('MSGsuccess', 'Success delete')
             res.redirect("/usuario")
         })
         .catch((err)=>{
-            req.flash('MSGerror', 'Não foi possivel Deletar o usuario')
+            req.flash('MSGerror', 'error')
             res.redirect("/usuario")
             console.log(err)
         })
 })
 router.get('/logout', (req,res)=>{
     req.logOut()
-    req.flash('MSGsuccess', 'Deslogado com sucesso')
+    req.flash('MSGsuccess', 'Success')
     res.redirect('/')
 })
 

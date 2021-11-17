@@ -1,6 +1,6 @@
 # Aplicação REST API
 
-Este código é um CRUD desenvlvido em Node.js, Express e MongoDb
+Este código é um CRUD de gerenciamento de usuarios desenvlvido em Node.js e MongoDb
 
 ## Recursos utilizados
 
