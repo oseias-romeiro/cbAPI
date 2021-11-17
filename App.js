@@ -60,8 +60,8 @@ const usr = require('./routes/usr')
     app.use('/usuario', usr);
     
 //porta
-const PORT = 80
+const PORT = process.env.port || 80
 app.listen(PORT, ()=>{
     console.log('Server running!')
-    console.log('http://localhost:80/')
+    console.log('http://localhost')
 });
