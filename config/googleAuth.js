@@ -7,8 +7,8 @@ const Usuario = mongoose.model('usuarios')
 
 module.exports = (passport)=>{
     passport.use(new GoogleStrategy({
-        clientID: '535430362084-amaj346dd229vh7eksei4s9jhca9otlt.apps.googleusercontent.com',
-        clientSecret: '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',
+        clientID: '',
+        clientSecret: '',
         callbackURL: "http://localhost:8081/login/google/callback/"
     }, function(accessToken, refreshToken, profile, done) {
         Usuario.findOne({ email: profile.emails[0].value })
